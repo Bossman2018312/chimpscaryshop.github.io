@@ -44,9 +44,12 @@
 <div class="container">
     <!-- Content goes here -->
 </div>
-<a href="#" class="shop-text" onclick="fadeToWhiteAndRedirect()">Home</a> <!-- Home text -->
+<a href="#" class="shop-text" onclick="fadeToWhiteAndRedirect(event)">Home</a> <!-- Home text -->
 <script>
-    function fadeToWhiteAndRedirect() {
+    function fadeToWhiteAndRedirect(event) {
+        // Prevent the default behavior of the anchor tag
+        event.preventDefault();
+
         // Fade everything to white
         document.body.style.backgroundColor = 'black'; // Change background color to white
         var shopText = document.querySelector('.shop-text');
@@ -54,7 +57,7 @@
 
         // Redirect to the home page after a delay
         setTimeout(function() {
-            window.location.href = 'chimpscary.com'; // Replace 'chimpscary.com' with the URL of your home page
+            window.location.href = 'http://chimpscary.com'; // Replace 'chimpscary.com' with the URL of your home page
         }, 1100); // Adjust delay as needed
     }
 
