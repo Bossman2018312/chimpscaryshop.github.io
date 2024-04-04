@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Page</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: black; /* Set initial background color */
+        transition: background-color 0.5s ease; /* Add transition for background color */
+    }
+    .container {
+        opacity: 0; /* Initial opacity */
+        transition: opacity 1s ease; /* Fade-in transition */
+    }
+    .shop-text {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: blue;
+        font-size: 96px; /* 2x bigger by default */
+        text-shadow: 0 0 20px blue; /* Add bloom effect */
+        font-family: 'small_bold_pixel-7', sans-serif; /* Apply custom font */
+        cursor: pointer; /* Change cursor to pointer */
+        opacity: 0; /* Initial opacity */
+        transition: opacity 0.5s ease, font-size 0.5s ease; /* Fade-in transition and font-size transition */
+    }
+
+    .shop-text:hover {
+        font-size: 112px; /* Increase font size when hovered */
+        text-shadow: 0 0 40px blue; /* Increase bloom effect when hovered */
+    }
+
+    @font-face {
+        font-family: 'small_bold_pixel-7';
+        src: url('small_bold_pixel-7.ttf') format('truetype'); /* Path to your font file */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Content goes here -->
+</div>
+<a href="#" class="shop-text" onclick="fadeToWhiteAndRedirect()">Home</a> <!-- Home text -->
+<script>
+    function fadeToWhiteAndRedirect() {
+        // Fade everything to white
+        document.body.style.backgroundColor = 'black'; // Change background color to white
+        var shopText = document.querySelector('.shop-text');
+        shopText.style.opacity = '0.1'; // Adjust the final opacity
+
+        // Redirect to the home page after a delay
+        setTimeout(function() {
+            window.location.href = 'chimpscary.com'; // Replace 'chimpscary.com' with the URL of your home page
+        }, 1100); // Adjust delay as needed
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.querySelector('.container').style.opacity = '1';
+            document.querySelector('.shop-text').style.opacity = '1';
+        }, 1000); // Adjust the delay as needed
+    });
+</script>
+</body>
+</html>
